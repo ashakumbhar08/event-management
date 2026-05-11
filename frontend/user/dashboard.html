@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - EventHub</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="page-fade-in">
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">
+                <i class="fas fa-calendar-alt"></i>
+                <span>EventHub</span>
+            </div>
+            <div class="sidebar-user">
+                Hello,
+                <strong class="user-name">User</strong>
+            </div>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="active">
+                <i class="fas fa-home"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="my-events.html">
+                <i class="fas fa-calendar-check"></i>
+                <span>My Events</span>
+            </a>
+            <a href="upcoming-events.html">
+                <i class="fas fa-clock"></i>
+                <span>Upcoming Events</span>
+            </a>
+            <a href="browse-events.html">
+                <i class="fas fa-search"></i>
+                <span>Browse Events</span>
+            </a>
+            <a href="certificates.html">
+                <i class="fas fa-award"></i>
+                <span>Certificates</span>
+            </a>
+            <a href="#" class="logout" onclick="handleLogout()">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Sidebar Backdrop (Mobile) -->
+    <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+    <!-- Sidebar Toggle Button (Mobile) -->
+    <button class="sidebar-toggle" id="sidebar-toggle">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Header -->
+        <div class="page-header-dashboard">
+            <h1>Hello, <span class="user-name">User</span>! Welcome back.</h1>
+            <p>Here's what's happening with your events today</p>
+        </div>
+
+        <!-- Summary Cards -->
+        <div class="summary-cards">
+            <div class="summary-card">
+                <div class="summary-icon" style="background: #EEF2FF;">
+                    <i class="fas fa-ticket-alt" style="color: #4F46E5;"></i>
+                </div>
+                <div class="summary-info">
+                    <h3>4</h3>
+                    <p>My Registered Events</p>
+                </div>
+            </div>
+
+            <div class="summary-card">
+                <div class="summary-icon" style="background: #ECFDF5;">
+                    <i class="fas fa-clock" style="color: #10B981;"></i>
+                </div>
+                <div class="summary-info">
+                    <h3>2</h3>
+                    <p>Upcoming Events</p>
+                </div>
+            </div>
+
+            <div class="summary-card">
+                <div class="summary-icon" style="background: #FEF3C7;">
+                    <i class="fas fa-check-circle" style="color: #F59E0B;"></i>
+                </div>
+                <div class="summary-info">
+                    <h3>6</h3>
+                    <p>Certificates Earned</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Upcoming Events Section -->
+        <div class="dashboard-content">
+            <div class="content-header">
+                <h2>Your Upcoming Events</h2>
+                <a href="browse-events.html" class="btn btn-primary">Browse All Events</a>
+            </div>
+
+            <div class="events-grid" id="upcoming-events">
+                <!-- Events will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <!-- JavaScript Files -->
+    <script src="../js/config.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="../js/user-dashboard.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

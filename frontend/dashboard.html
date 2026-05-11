@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - EventHub</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-fade-in">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <i class="fas fa-calendar-alt"></i>
+                <span>EventHub</span>
+            </div>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html" class="btn-register">Register</a></li>
+            </ul>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Section -->
+    <section class="dashboard-section">
+        <div class="container">
+            <!-- Welcome Header -->
+            <div class="dashboard-header">
+                <div>
+                    <h1 id="welcome-heading">Welcome, User</h1>
+                    <p>Here's what's happening with your events today</p>
+                </div>
+                <a href="create-event.html" class="btn btn-primary">
+                    <i class="fas fa-plus"></i> Create New Event
+                </a>
+            </div>
+
+            <!-- Summary Cards -->
+            <div class="summary-cards">
+                <!-- Card 1: My Events -->
+                <div class="summary-card">
+                    <div class="summary-icon" style="background: #EEF2FF;">
+                        <i class="fas fa-calendar" style="color: #4F46E5;"></i>
+                    </div>
+                    <div class="summary-info">
+                        <h3>12</h3>
+                        <p>My Events</p>
+                    </div>
+                </div>
+
+                <!-- Card 2: Upcoming Events -->
+                <div class="summary-card">
+                    <div class="summary-icon" style="background: #ECFDF5;">
+                        <i class="fas fa-clock" style="color: #10B981;"></i>
+                    </div>
+                    <div class="summary-info">
+                        <h3>8</h3>
+                        <p>Upcoming Events</p>
+                    </div>
+                </div>
+
+                <!-- Card 3: Events Attended -->
+                <div class="summary-card">
+                    <div class="summary-icon" style="background: #FEF3C7;">
+                        <i class="fas fa-check-circle" style="color: #F59E0B;"></i>
+                    </div>
+                    <div class="summary-info">
+                        <h3>24</h3>
+                        <p>Events Attended</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upcoming Events Table -->
+            <div class="dashboard-content">
+                <div class="content-header">
+                    <h2>Upcoming Events</h2>
+                    <a href="events.html" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="events-table-container">
+                    <table class="events-table">
+                        <thead>
+                            <tr>
+                                <th>Event Name</th>
+                                <th>Date</th>
+                                <th>Location</th>
+                                <th>Category</th>
+                                <th>Attendees</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Event Row 1 -->
+                            <tr>
+                                <td>
+                                    <div class="event-name">
+                                        <i class="fas fa-calendar-day"></i>
+                                        <span>Tech Conference 2025</span>
+                                    </div>
+                                </td>
+                                <td>May 15, 2026</td>
+                                <td>San Francisco, CA</td>
+                                <td><span class="badge badge-conference">Conference</span></td>
+                                <td>250/300</td>
+                                <td>
+                                    <button class="btn-action">View Details</button>
+                                </td>
+                            </tr>
+
+                            <!-- Event Row 2 -->
+                            <tr>
+                                <td>
+                                    <div class="event-name">
+                                        <i class="fas fa-calendar-day"></i>
+                                        <span>Web Development Workshop</span>
+                                    </div>
+                                </td>
+                                <td>May 20, 2026</td>
+                                <td>Online</td>
+                                <td><span class="badge badge-workshop">Workshop</span></td>
+                                <td>45/50</td>
+                                <td>
+                                    <button class="btn-action">View Details</button>
+                                </td>
+                            </tr>
+
+                            <!-- Event Row 3 -->
+                            <tr>
+                                <td>
+                                    <div class="event-name">
+                                        <i class="fas fa-calendar-day"></i>
+                                        <span>Summer Music Festival</span>
+                                    </div>
+                                </td>
+                                <td>June 5, 2026</td>
+                                <td>Los Angeles, CA</td>
+                                <td><span class="badge badge-party">Party</span></td>
+                                <td>1200/1500</td>
+                                <td>
+                                    <button class="btn-action">View Details</button>
+                                </td>
+                            </tr>
+
+                            <!-- Event Row 4 -->
+                            <tr>
+                                <td>
+                                    <div class="event-name">
+                                        <i class="fas fa-calendar-day"></i>
+                                        <span>AI & Machine Learning Webinar</span>
+                                    </div>
+                                </td>
+                                <td>May 25, 2026</td>
+                                <td>Online</td>
+                                <td><span class="badge badge-webinar">Webinar</span></td>
+                                <td>180/200</td>
+                                <td>
+                                    <button class="btn-action">View Details</button>
+                                </td>
+                            </tr>
+
+                            <!-- Event Row 5 -->
+                            <tr>
+                                <td>
+                                    <div class="event-name">
+                                        <i class="fas fa-calendar-day"></i>
+                                        <span>Startup Networking Event</span>
+                                    </div>
+                                </td>
+                                <td>June 10, 2026</td>
+                                <td>New York, NY</td>
+                                <td><span class="badge badge-other">Networking</span></td>
+                                <td>95/100</td>
+                                <td>
+                                    <button class="btn-action">View Details</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>EventHub</span>
+                </div>
+                <p class="footer-tagline">Making event management simple and efficient</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul class="footer-links">
+                    <li><a href="#">support@eventhub.com</a></li>
+                    <li><a href="#">+1 (555) 123-4567</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 EventHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/dashboard-auth.js"></script>
+</body>
+</html>

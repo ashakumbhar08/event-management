@@ -1,0 +1,16 @@
+# Node.js dependencies folder — never upload this to GitHub
+node_modules
+
+# Environment variables file — contains secrets, never share publicly
+.env
+
+# macOS system files
+.DS_Store
+
+# Log files
+*.log
+npm-debug.log*
+
+# Editor directories
+.vscode
+.idea

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details - EventHub</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-fade-in">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <i class="fas fa-calendar-alt"></i>
+                <span>EventHub</span>
+            </div>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="index.html#how-it-works">How It Works</a></li>
+                <li><a href="login-user.html">Login</a></li>
+                <li><a href="signup.html" class="btn-signup">Sign Up</a></li>
+            </ul>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Event Detail Section -->
+    <section class="events-section">
+        <div class="container">
+            <!-- Back Button -->
+            <button class="back-button" onclick="window.location.href='events.html'">
+                <i class="fas fa-arrow-left"></i> Back to Events
+            </button>
+
+            <!-- Event Detail Container -->
+            <div class="event-detail-container">
+                <div class="event-detail-header">
+                    <h1 id="event-name">Loading...</h1>
+                    <span id="event-status" class="status-badge status-active">Active</span>
+                </div>
+
+                <div class="event-detail-grid">
+                    <div class="event-detail-item">
+                        <i class="fas fa-calendar"></i>
+                        <div>
+                            <label>Date</label>
+                            <span id="event-date">-</span>
+                        </div>
+                    </div>
+
+                    <div class="event-detail-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <label>Time</label>
+                            <span id="event-time">-</span>
+                        </div>
+                    </div>
+
+                    <div class="event-detail-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <label>Location</label>
+                            <span id="event-location">-</span>
+                        </div>
+                    </div>
+
+                    <div class="event-detail-item">
+                        <i class="fas fa-tag"></i>
+                        <div>
+                            <label>Category</label>
+                            <span id="event-category">-</span>
+                        </div>
+                    </div>
+
+                    <div class="event-detail-item">
+                        <i class="fas fa-users"></i>
+                        <div>
+                            <label>Attendees</label>
+                            <span id="event-attendees">-</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-description-full">
+                    <h3>About This Event</h3>
+                    <p id="event-description">Loading event details...</p>
+                </div>
+
+                <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                    <button class="btn btn-primary" onclick="registerForEvent()">
+                        <i class="fas fa-ticket-alt"></i> Register for Event
+                    </button>
+                    <button class="btn btn-outline" onclick="window.location.href='events.html'">
+                        Back to Events
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>EventHub</span>
+                </div>
+                <p class="footer-tagline">Making event management simple, efficient, and accessible for everyone</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="login-user.html">Login</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <ul class="footer-links">
+                    <li><i class="fas fa-envelope"></i> support@eventhub.com</li>
+                    <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Mumbai, India</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 EventHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/auth.js"></script>
+    <script src="js/events.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Load event details
+        loadEventDetail();
+        
+        // Register for event function
+        function registerForEvent() {
+            const eventId = localStorage.getItem('selectedEventId');
+            if (eventId) {
+                const event = getEventById(eventId);
+                if (event) {
+                    showToast('Successfully registered for ' + event.name + '!');
+                    setTimeout(() => {
+                        alert('Please login or sign up to complete your registration.');
+                        window.location.href = 'signup.html';
+                    }, 2000);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

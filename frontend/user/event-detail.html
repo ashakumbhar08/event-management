@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details - EventHub</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="page-fade-in">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">
+                <i class="fas fa-calendar-alt"></i>
+                <span>EventHub</span>
+            </div>
+            <div class="sidebar-user">
+                Hello,
+                <strong class="user-name">User</strong>
+            </div>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="dashboard.html">
+                <i class="fas fa-home"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="my-events.html">
+                <i class="fas fa-calendar-check"></i>
+                <span>My Events</span>
+            </a>
+            <a href="upcoming-events.html">
+                <i class="fas fa-clock"></i>
+                <span>Upcoming Events</span>
+            </a>
+            <a href="browse-events.html" class="active">
+                <i class="fas fa-search"></i>
+                <span>Browse Events</span>
+            </a>
+            <a href="certificates.html">
+                <i class="fas fa-award"></i>
+                <span>Certificates</span>
+            </a>
+            <a href="#" class="logout" onclick="handleLogout()">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Sidebar Backdrop (Mobile) -->
+    <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+    <!-- Sidebar Toggle Button (Mobile) -->
+    <button class="sidebar-toggle" id="sidebar-toggle">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Back Button -->
+        <button class="back-button" onclick="window.location.href='browse-events.html'">
+            <i class="fas fa-arrow-left"></i> Back
+        </button>
+
+        <!-- Event Detail Container -->
+        <div class="event-detail-container">
+            <div class="event-detail-header">
+                <h1 id="event-name">Loading...</h1>
+                <span id="event-status" class="status-badge status-active">Active</span>
+            </div>
+
+            <div class="event-detail-grid">
+                <div class="event-detail-item">
+                    <i class="fas fa-calendar"></i>
+                    <div>
+                        <label>Date</label>
+                        <span id="event-date">-</span>
+                    </div>
+                </div>
+
+                <div class="event-detail-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <label>Time</label>
+                        <span id="event-time">-</span>
+                    </div>
+                </div>
+
+                <div class="event-detail-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <label>Location</label>
+                        <span id="event-location">-</span>
+                    </div>
+                </div>
+
+                <div class="event-detail-item">
+                    <i class="fas fa-tag"></i>
+                    <div>
+                        <label>Category</label>
+                        <span id="event-category">-</span>
+                    </div>
+                </div>
+
+                <div class="event-detail-item">
+                    <i class="fas fa-users"></i>
+                    <div>
+                        <label>Attendees</label>
+                        <span id="event-attendees">-</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="event-description-full">
+                <h3>About This Event</h3>
+                <p id="event-description">Loading event details...</p>
+            </div>
+
+            <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                <button class="btn btn-primary" id="register-btn" onclick="registerForEventUser()">
+                    <i class="fas fa-ticket-alt"></i> Register for Event
+                </button>
+                <button class="btn btn-outline" onclick="window.location.href='browse-events.html'">
+                    Back to Browse
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="../js/auth.js"></script>
+    <script src="../js/events.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+        // Check authentication
+        checkAuth();
+        
+        // Display user name
+        displayUserName();
+        
+        // Load event details
+        loadEventDetail();
+        
+        // Register for event function
+        function registerForEventUser() {
+            const eventId = localStorage.getItem('selectedEventId');
+            if (eventId) {
+                registerForEvent(eventId);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Event - Admin - EventHub</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Admin Stylesheets -->
+    <link rel="stylesheet" href="css/admin-style.css">
+    <link rel="stylesheet" href="css/admin-sidebar.css">
+</head>
+<body class="page-fade-in">
+    <div class="admin-layout">
+        <!-- Admin Sidebar -->
+        <aside class="admin-sidebar" id="admin-sidebar">
+            <div class="admin-sidebar-header">
+                <div class="admin-sidebar-logo">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>EventHub</span>
+                </div>
+                <div class="admin-sidebar-user">
+                    Welcome,
+                    <strong class="admin-name">Admin</strong>
+                </div>
+            </div>
+            
+            <nav class="admin-sidebar-nav">
+                <a href="admin-dashboard.html">
+                    <i class="fas fa-th-large"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="admin-create-event.html" class="active">
+                    <i class="fas fa-plus-circle"></i>
+                    <span>Create Event</span>
+                </a>
+                <a href="admin-manage-events.html">
+                    <i class="fas fa-calendar-edit"></i>
+                    <span>Manage Events</span>
+                </a>
+                <a href="admin-analytics.html">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Analytics</span>
+                </a>
+                <a href="admin-users.html">
+                    <i class="fas fa-users"></i>
+                    <span>Users / Participants</span>
+                </a>
+                <a href="#" class="logout" onclick="handleAdminLogout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Sidebar Backdrop (Mobile) -->
+        <div class="admin-sidebar-backdrop" id="admin-sidebar-backdrop"></div>
+
+        <!-- Sidebar Toggle Button (Mobile) -->
+        <button class="admin-sidebar-toggle" id="admin-sidebar-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Main Content -->
+        <main class="admin-main-content">
+            <!-- Back Button -->
+            <button class="admin-back-button" onclick="window.history.back()">
+                <i class="fas fa-arrow-left"></i> Back
+            </button>
+
+            <!-- Page Header -->
+            <div class="admin-page-header">
+                <h1>Create New Event</h1>
+                <p>Fill in the details below to create a new event</p>
+            </div>
+
+            <!-- Create Event Form -->
+            <div class="admin-form-container">
+                <form class="admin-form" id="create-event-form" onsubmit="handleCreateEvent(event)">
+                    <!-- Event Name -->
+                    <div class="form-group">
+                        <label for="event-name">
+                            <i class="fas fa-heading"></i>
+                            Event Name <span class="required">*</span>
+                        </label>
+                        <input type="text" id="event-name" name="name" placeholder="Enter event name" required>
+                        <span class="error-message" id="name-error"></span>
+                    </div>
+
+                    <!-- Two Column Row -->
+                    <div class="form-row">
+                        <!-- Event Category -->
+                        <div class="form-group">
+                            <label for="event-category">
+                                <i class="fas fa-tag"></i>
+                                Event Category <span class="required">*</span>
+                            </label>
+                            <select id="event-category" name="category" required>
+                                <option value="">Select category</option>
+                                <option value="Tech">Tech</option>
+                                <option value="Cultural">Cultural</option>
+                                <option value="Sports">Sports</option>
+                                <option value="Workshop">Workshop</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <span class="error-message" id="category-error"></span>
+                        </div>
+
+                        <!-- Event Status -->
+                        <div class="form-group">
+                            <label for="event-status">
+                                <i class="fas fa-info-circle"></i>
+                                Event Status <span class="required">*</span>
+                            </label>
+                            <select id="event-status" name="status" required>
+                                <option value="">Select status</option>
+                                <option value="Upcoming">Upcoming</option>
+                                <option value="Active">Active</option>
+                                <option value="Completed">Completed</option>
+                            </select>
+                            <span class="error-message" id="status-error"></span>
+                        </div>
+                    </div>
+
+                    <!-- Two Column Row -->
+                    <div class="form-row">
+                        <!-- Event Date -->
+                        <div class="form-group">
+                            <label for="event-date">
+                                <i class="fas fa-calendar"></i>
+                                Event Date <span class="required">*</span>
+                            </label>
+                            <input type="date" id="event-date" name="date" required>
+                            <span class="error-message" id="date-error"></span>
+                        </div>
+
+                        <!-- Event Time -->
+                        <div class="form-group">
+                            <label for="event-time">
+                                <i class="fas fa-clock"></i>
+                                Event Time <span class="required">*</span>
+                            </label>
+                            <input type="time" id="event-time" name="time" required>
+                            <span class="error-message" id="time-error"></span>
+                        </div>
+                    </div>
+
+                    <!-- Two Column Row -->
+                    <div class="form-row">
+                        <!-- Event Location -->
+                        <div class="form-group">
+                            <label for="event-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Event Location <span class="required">*</span>
+                            </label>
+                            <input type="text" id="event-location" name="location" placeholder="Enter location" required>
+                            <span class="error-message" id="location-error"></span>
+                        </div>
+
+                        <!-- Maximum Participants -->
+                        <div class="form-group">
+                            <label for="event-max-participants">
+                                <i class="fas fa-users"></i>
+                                Maximum Participants
+                            </label>
+                            <input type="number" id="event-max-participants" name="maxParticipants" placeholder="Optional" min="1">
+                        </div>
+                    </div>
+
+                    <!-- Event Description -->
+                    <div class="form-group">
+                        <label for="event-description">
+                            <i class="fas fa-align-left"></i>
+                            Event Description <span class="required">*</span>
+                        </label>
+                        <textarea id="event-description" name="description" rows="4" placeholder="Enter event description" required></textarea>
+                        <span class="error-message" id="description-error"></span>
+                    </div>
+
+                    <!-- Success Message -->
+                    <div class="success-message-box" id="success-message" style="display: none;">
+                        <i class="fas fa-check-circle"></i>
+                        <span>✔ Event created successfully!</span>
+                    </div>
+
+                    <!-- Form Actions -->
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-admin-secondary" onclick="window.history.back()">
+                            <i class="fas fa-times"></i> Cancel
+                        </button>
+                        <button type="submit" class="btn btn-admin-primary">
+                            <i class="fas fa-plus-circle"></i> Create Event
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/admin-auth.js"></script>
+    <script src="js/admin-sidebar.js"></script>
+    <script src="js/admin-events.js"></script>
+    <script>
+        // Check admin authentication
+        checkAdminAuth();
+        
+        // Display admin name
+        displayAdminName();
+        
+        // Handle form submission
+        function handleCreateEvent(event) {
+            event.preventDefault();
+            
+            // Get form values
+            const formData = {
+                name: document.getElementById('event-name').value.trim(),
+                category: document.getElementById('event-category').value,
+                status: document.getElementById('event-status').value,
+                date: document.getElementById('event-date').value,
+                time: document.getElementById('event-time').value,
+                location: document.getElementById('event-location').value.trim(),
+                maxParticipants: document.getElementById('event-max-participants').value || null,
+                description: document.getElementById('event-description').value.trim()
+            };
+            
+            // Validate required fields
+            let isValid = true;
+            
+            if (!formData.name) {
+                showFieldError('name-error', 'Event name is required');
+                isValid = false;
+            }
+            
+            if (!formData.category) {
+                showFieldError('category-error', 'Please select a category');
+                isValid = false;
+            }
+            
+            if (!formData.status) {
+                showFieldError('status-error', 'Please select a status');
+                isValid = false;
+            }
+            
+            if (!formData.date) {
+                showFieldError('date-error', 'Event date is required');
+                isValid = false;
+            }
+            
+            if (!formData.time) {
+                showFieldError('time-error', 'Event time is required');
+                isValid = false;
+            }
+            
+            if (!formData.location) {
+                showFieldError('location-error', 'Event location is required');
+                isValid = false;
+            }
+            
+            if (!formData.description) {
+                showFieldError('description-error', 'Event description is required');
+                isValid = false;
+            }
+            
+            if (!isValid) {
+                return;
+            }
+            
+            // Create the event
+            createAdminEvent(formData);
+            
+            // Show success message
+            const successBox = document.getElementById('success-message');
+            successBox.style.display = 'flex';
+            
+            // Show toast notification
+            showAdminToast('Event created successfully!', 'success');
+            
+            // Reset form after delay
+            setTimeout(() => {
+                document.getElementById('create-event-form').reset();
+                successBox.style.display = 'none';
+            }, 1500);
+        }
+        
+        // Show field error
+        function showFieldError(errorId, message) {
+            const errorElement = document.getElementById(errorId);
+            errorElement.textContent = message;
+            errorElement.style.display = 'block';
+            
+            // Hide error after 3 seconds
+            setTimeout(() => {
+                errorElement.style.display = 'none';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

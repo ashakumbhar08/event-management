@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics - Admin - EventHub</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Admin Stylesheets -->
+    <link rel="stylesheet" href="css/admin-style.css">
+    <link rel="stylesheet" href="css/admin-sidebar.css">
+    <link rel="stylesheet" href="css/admin-charts.css">
+</head>
+<body class="page-fade-in">
+    <div class="admin-layout">
+        <!-- Admin Sidebar -->
+        <aside class="admin-sidebar" id="admin-sidebar">
+            <div class="admin-sidebar-header">
+                <div class="admin-sidebar-logo">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>EventHub</span>
+                </div>
+                <div class="admin-sidebar-user">
+                    Welcome,
+                    <strong class="admin-name">Admin</strong>
+                </div>
+            </div>
+            
+            <nav class="admin-sidebar-nav">
+                <a href="admin-dashboard.html">
+                    <i class="fas fa-th-large"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="admin-create-event.html">
+                    <i class="fas fa-plus-circle"></i>
+                    <span>Create Event</span>
+                </a>
+                <a href="admin-manage-events.html">
+                    <i class="fas fa-calendar-edit"></i>
+                    <span>Manage Events</span>
+                </a>
+                <a href="admin-analytics.html" class="active">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Analytics</span>
+                </a>
+                <a href="admin-users.html">
+                    <i class="fas fa-users"></i>
+                    <span>Users / Participants</span>
+                </a>
+                <a href="#" class="logout" onclick="handleAdminLogout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Sidebar Backdrop (Mobile) -->
+        <div class="admin-sidebar-backdrop" id="admin-sidebar-backdrop"></div>
+
+        <!-- Sidebar Toggle Button (Mobile) -->
+        <button class="admin-sidebar-toggle" id="admin-sidebar-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Main Content -->
+        <main class="admin-main-content">
+            <!-- Back Button -->
+            <button class="admin-back-button" onclick="window.history.back()">
+                <i class="fas fa-arrow-left"></i> Back
+            </button>
+
+            <!-- Page Header -->
+            <div class="admin-page-header">
+                <h1>Analytics & Insights</h1>
+                <p>Visual overview of your event management data</p>
+            </div>
+
+            <!-- Summary Stats Row -->
+            <div class="analytics-summary">
+                <div class="summary-stat-box">
+                    <i class="fas fa-calendar-alt"></i>
+                    <div>
+                        <h3>12</h3>
+                        <p>Total Events</p>
+                    </div>
+                </div>
+                <div class="summary-stat-box">
+                    <i class="fas fa-users"></i>
+                    <div>
+                        <h3>108</h3>
+                        <p>Total Registrations</p>
+                    </div>
+                </div>
+                <div class="summary-stat-box">
+                    <i class="fas fa-chart-line"></i>
+                    <div>
+                        <h3>89%</h3>
+                        <p>Attendance Rate</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Grid -->
+            <div class="charts-grid">
+                <!-- Chart 1: Event Category Distribution -->
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>Events by Category</h3>
+                        <p>Distribution of events across different categories</p>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="categoryChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Chart 2: Monthly Registrations -->
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>User Registrations Per Month</h3>
+                        <p>Monthly trend of user registrations</p>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="monthlyChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Chart 3: Event Status Breakdown -->
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>Event Status Breakdown</h3>
+                        <p>Current status distribution of all events</p>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="statusChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Note -->
+            <div class="data-note">
+                <i class="fas fa-info-circle"></i>
+                <p><strong>Note:</strong> All data shown is sample/dummy data for demonstration purposes. In a production environment, this would display real analytics from your database.</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/admin-auth.js"></script>
+    <script src="js/admin-sidebar.js"></script>
+    <script src="js/admin-analytics.js"></script>
+    <script>
+        // Check admin authentication
+        checkAdminAuth();
+        
+        // Display admin name
+        displayAdminName();
+        
+        // Initialize all charts after page loads
+        window.addEventListener('load', function() {
+            initializeCharts();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+/* ===================================
+   EventHub - Admin Charts & Analytics Styles
+   
+   Styles for analytics page and Chart.js containers
+   =================================== */
+
+/* ===================================
+   ANALYTICS SUMMARY STATS
+   =================================== */
+.analytics-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.summary-stat-box {
+    background: linear-gradient(135deg, var(--admin-accent) 0%, var(--admin-accent-hover) 100%);
+    color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(92, 107, 192, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    transition: all 0.2s ease;
+}
+
+.summary-stat-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(92, 107, 192, 0.4);
+}
+
+.summary-stat-box i {
+    font-size: 2.5rem;
+    opacity: 0.9;
+}
+
+.summary-stat-box h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.summary-stat-box p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* ===================================
+   CHARTS GRID
+   =================================== */
+.charts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Chart Card */
+.chart-card {
+    background-color: var(--admin-card-bg);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    padding: 1.5rem;
+    transition: all 0.2s ease;
+}
+
+.chart-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.chart-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--admin-border);
+}
+
+.chart-header h3 {
+    font-size: 1.25rem;
+    color: var(--admin-primary);
+    margin-bottom: 0.5rem;
+}
+
+.chart-header p {
+    font-size: 0.9rem;
+    color: var(--admin-text-light);
+}
+
+/* Chart Container */
+.chart-container {
+    position: relative;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chart-container canvas {
+    max-height: 100%;
+}
+
+/* ===================================
+   DATA NOTE
+   =================================== */
+.data-note {
+    background-color: #e3f2fd;
+    border-left: 4px solid var(--admin-accent);
+    border-radius: 8px;
+    padding: 1.25rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.data-note i {
+    color: var(--admin-accent);
+    font-size: 1.5rem;
+    margin-top: 0.25rem;
+}
+
+.data-note p {
+    color: var(--admin-text);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ===================================
+   RESPONSIVE DESIGN - ANALYTICS
+   =================================== */
+@media (max-width: 1024px) {
+    .charts-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .analytics-summary {
+        grid-template-columns: 1fr;
+    }
+    
+    .summary-stat-box {
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+    }
+    
+    .chart-container {
+        height: 250px;
+    }
+    
+    .data-note {
+        flex-direction: column;
+        text-align: center;
+    }
+}

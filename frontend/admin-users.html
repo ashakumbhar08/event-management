@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users / Participants - Admin - EventHub</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Admin Stylesheets -->
+    <link rel="stylesheet" href="css/admin-style.css">
+    <link rel="stylesheet" href="css/admin-sidebar.css">
+</head>
+<body class="page-fade-in">
+    <div class="admin-layout">
+        <!-- Admin Sidebar -->
+        <aside class="admin-sidebar" id="admin-sidebar">
+            <div class="admin-sidebar-header">
+                <div class="admin-sidebar-logo">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>EventHub</span>
+                </div>
+                <div class="admin-sidebar-user">
+                    Welcome,
+                    <strong class="admin-name">Admin</strong>
+                </div>
+            </div>
+            
+            <nav class="admin-sidebar-nav">
+                <a href="admin-dashboard.html">
+                    <i class="fas fa-th-large"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="admin-create-event.html">
+                    <i class="fas fa-plus-circle"></i>
+                    <span>Create Event</span>
+                </a>
+                <a href="admin-manage-events.html">
+                    <i class="fas fa-calendar-edit"></i>
+                    <span>Manage Events</span>
+                </a>
+                <a href="admin-analytics.html">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Analytics</span>
+                </a>
+                <a href="admin-users.html" class="active">
+                    <i class="fas fa-users"></i>
+                    <span>Users / Participants</span>
+                </a>
+                <a href="#" class="logout" onclick="handleAdminLogout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Sidebar Backdrop (Mobile) -->
+        <div class="admin-sidebar-backdrop" id="admin-sidebar-backdrop"></div>
+
+        <!-- Sidebar Toggle Button (Mobile) -->
+        <button class="admin-sidebar-toggle" id="admin-sidebar-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Main Content -->
+        <main class="admin-main-content">
+            <!-- Back Button -->
+            <button class="admin-back-button" onclick="window.history.back()">
+                <i class="fas fa-arrow-left"></i> Back
+            </button>
+
+            <!-- Page Header -->
+            <div class="admin-page-header">
+                <h1>Users / Participants</h1>
+                <p>View and manage all registered users and participants</p>
+            </div>
+
+            <!-- Summary Cards -->
+            <div class="admin-stats-grid">
+                <div class="admin-stat-card">
+                    <div class="stat-icon" style="background-color: #e3f2fd;">
+                        <i class="fas fa-users" style="color: #1976d2;"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="total-registered">8</h3>
+                        <p>Total Registered Users</p>
+                    </div>
+                </div>
+
+                <div class="admin-stat-card">
+                    <div class="stat-icon" style="background-color: #e8f5e9;">
+                        <i class="fas fa-check-circle" style="color: #388e3c;"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="confirmed-participants">6</h3>
+                        <p>Confirmed Participants</p>
+                    </div>
+                </div>
+
+                <div class="admin-stat-card">
+                    <div class="stat-icon" style="background-color: #fff3e0;">
+                        <i class="fas fa-clock" style="color: #f57c00;"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="pending-registrations">2</h3>
+                        <p>Pending Registrations</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="admin-search-container">
+                <div class="admin-search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="search-users-input" placeholder="Search by name or email..." onkeyup="handleSearchUsers()">
+                </div>
+            </div>
+
+            <!-- Participants Table -->
+            <div class="admin-section-card">
+                <div class="admin-section-header">
+                    <h2>Registered Participants</h2>
+                </div>
+
+                <div class="admin-table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Registered Event</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="users-tbody">
+                            <!-- Users will be loaded here by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/admin-auth.js"></script>
+    <script src="js/admin-sidebar.js"></script>
+    <script src="js/admin-users.js"></script>
+    <script>
+        // Check admin authentication
+        checkAdminAuth();
+        
+        // Display admin name
+        displayAdminName();
+        
+        // Load users data
+        loadUsersData();
+    </script>
+</body>
+</html>

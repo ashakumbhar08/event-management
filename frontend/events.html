@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Events - EventHub</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-fade-in">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <i class="fas fa-calendar-alt"></i>
+                <span>EventHub</span>
+            </div>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="events.html" class="active">Events</a></li>
+                <li><a href="index.html#how-it-works">How It Works</a></li>
+                <li><a href="login-user.html">Login</a></li>
+                <li><a href="signup.html" class="btn-signup">Sign Up</a></li>
+            </ul>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Events Section -->
+    <section class="events-section">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1>Upcoming Events</h1>
+                <p>Discover and join exciting events happening around you</p>
+            </div>
+
+            <!-- Search and Filter Bar -->
+            <div class="search-filter-container">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="search-input" placeholder="Search for events, categories, or locations..." onkeyup="handleSearch()">
+                </div>
+                
+                <div class="filter-row">
+                    <select class="filter-select" id="category-filter" onchange="handleCategoryFilter()">
+                        <option value="All">All Categories</option>
+                        <option value="Conference">Conference</option>
+                        <option value="Workshop">Workshop</option>
+                        <option value="Seminar">Seminar</option>
+                        <option value="Party">Party</option>
+                        <option value="Webinar">Webinar</option>
+                        <option value="Exhibition">Exhibition</option>
+                        <option value="Competition">Competition</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Events Grid - Dynamic Content -->
+            <div class="events-grid" id="events-container">
+                <!-- Events will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>EventHub</span>
+                </div>
+                <p class="footer-tagline">Making event management simple, efficient, and accessible for everyone</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="login-user.html">Login</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <ul class="footer-links">
+                    <li><i class="fas fa-envelope"></i> support@eventhub.com</li>
+                    <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Mumbai, India</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 EventHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/events.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Load all events initially
+        let currentEvents = getAllEvents();
+        renderEventCards(currentEvents, 'events-container');
+        
+        // Handle search
+        function handleSearch() {
+            const query = document.getElementById('search-input').value;
+            const category = document.getElementById('category-filter').value;
+            
+            let filtered = searchEvents(query);
+            
+            if (category !== 'All') {
+                filtered = filtered.filter(event => event.category === category);
+            }
+            
+            currentEvents = filtered;
+            renderEventCards(currentEvents, 'events-container');
+        }
+        
+        // Handle category filter
+        function handleCategoryFilter() {
+            const category = document.getElementById('category-filter').value;
+            const query = document.getElementById('search-input').value;
+            
+            let filtered = filterEventsByCategory(category);
+            
+            if (query) {
+                filtered = filtered.filter(event => 
+                    event.name.toLowerCase().includes(query.toLowerCase()) ||
+                    event.description.toLowerCase().includes(query.toLowerCase())
+                );
+            }
+            
+            currentEvents = filtered;
+            renderEventCards(currentEvents, 'events-container');
+        }
+    </script>
+</body>
+</html>

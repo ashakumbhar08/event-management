@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - EventHub</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Admin Stylesheet -->
+    <link rel="stylesheet" href="css/admin-style.css">
+</head>
+<body class="page-fade-in admin-login-page">
+    <!-- Admin Login Section -->
+    <section class="admin-auth-section">
+        <div class="admin-auth-container">
+            <div class="admin-auth-card">
+                <!-- Admin Badge -->
+                <div class="admin-badge-header">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>ADMIN ACCESS</span>
+                </div>
+                
+                <div class="admin-auth-header">
+                    <div class="admin-logo">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>EventHub</span>
+                    </div>
+                    <h2>Admin Login</h2>
+                    <p>Enter your admin credentials to access the control panel</p>
+                </div>
+                
+                <!-- Admin Login Form -->
+                <form class="admin-auth-form" id="adminLoginForm" onsubmit="handleAdminLogin(event)">
+                    <!-- Username Input -->
+                    <div class="form-group">
+                        <label for="admin-username">
+                            <i class="fas fa-user-shield"></i>
+                            Admin Username <span class="required">*</span>
+                        </label>
+                        <input type="text" id="admin-username" name="username" placeholder="Enter admin username" required>
+                        <span class="error-message" id="username-error"></span>
+                    </div>
+                    
+                    <!-- Password Input -->
+                    <div class="form-group">
+                        <label for="admin-password">
+                            <i class="fas fa-lock"></i>
+                            Admin Password <span class="required">*</span>
+                        </label>
+                        <input type="password" id="admin-password" name="password" placeholder="Enter admin password" required>
+                        <span class="error-message" id="password-error"></span>
+                    </div>
+                    
+                    <!-- Error Message Container -->
+                    <div class="error-message-box" id="login-error" style="display: none;">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <span>Invalid admin credentials. Please try again.</span>
+                    </div>
+                    
+                    <!-- Login Button -->
+                    <button type="submit" class="btn btn-admin-primary btn-full">
+                        <i class="fas fa-sign-in-alt"></i> Login to Admin Panel
+                    </button>
+                </form>
+                
+                <!-- Back to User Login Link -->
+                <div class="admin-auth-footer">
+                    <a href="login-user.html" class="back-link">
+                        <i class="fas fa-arrow-left"></i> Back to User Login
+                    </a>
+                </div>
+                
+                <!-- Demo Credentials Info -->
+                <div class="demo-credentials">
+                    <p><strong>Demo Credentials:</strong></p>
+                    <p>Username: <code>admin</code></p>
+                    <p>Password: <code>admin123</code></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script src="js/config.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/admin-auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Event - EventHub</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-fade-in">
+    <!-- Navigation Bar - Admin -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <i class="fas fa-calendar-alt"></i>
+                <span>EventHub</span>
+            </div>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="events.html">All Events</a></li>
+                <li><a href="#users">Users</a></li>
+                <li><a href="create-event.html" class="active">Create Event</a></li>
+                <li><a href="index.html" class="btn-logout">Logout</a></li>
+            </ul>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Create Event Section -->
+    <section class="create-event-section">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1>Create New Event</h1>
+                <p>Fill in the details below to create your event</p>
+            </div>
+
+            <!-- Event Form -->
+            <div class="form-container">
+                <form class="event-form" id="createEventForm">
+                    <!-- Event Name -->
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label for="event-name">
+                                <i class="fas fa-heading"></i>
+                                Event Name *
+                            </label>
+                            <input type="text" id="event-name" name="event-name" placeholder="Enter event name" required>
+                        </div>
+                    </div>
+
+                    <!-- Event Description -->
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label for="event-description">
+                                <i class="fas fa-align-left"></i>
+                                Event Description *
+                            </label>
+                            <textarea id="event-description" name="event-description" rows="5" placeholder="Describe your event..." required></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Event Date -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="event-date">
+                                <i class="fas fa-calendar"></i>
+                                Event Date *
+                            </label>
+                            <input type="date" id="event-date" name="event-date" required>
+                        </div>
+                    </div>
+
+                    <!-- Event Start Time and End Time -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="event-start-time">
+                                <i class="fas fa-clock"></i>
+                                Event Start Time *
+                            </label>
+                            <input type="time" id="event-start-time" name="event-start-time" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="event-end-time">
+                                <i class="fas fa-clock"></i>
+                                Event End Time *
+                            </label>
+                            <input type="time" id="event-end-time" name="event-end-time" required>
+                        </div>
+                    </div>
+
+                    <!-- Location and Category -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="event-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Location / Venue *
+                            </label>
+                            <input type="text" id="event-location" name="event-location" placeholder="Enter event location" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="event-category">
+                                <i class="fas fa-tag"></i>
+                                Category *
+                            </label>
+                            <select id="event-category" name="event-category" required>
+                                <option value="">Select a category</option>
+                                <option value="conference">Conference</option>
+                                <option value="workshop">Workshop</option>
+                                <option value="seminar">Seminar</option>
+                                <option value="party">Party</option>
+                                <option value="webinar">Webinar</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Maximum Attendees and Event Banner -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="max-attendees">
+                                <i class="fas fa-users"></i>
+                                Maximum Attendees *
+                            </label>
+                            <input type="number" id="max-attendees" name="max-attendees" placeholder="Enter maximum number" min="1" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="event-banner">
+                                <i class="fas fa-image"></i>
+                                Event Banner Image
+                            </label>
+                            <input type="file" id="event-banner" name="event-banner" accept="image/*">
+                            <small class="form-hint">Upload an image for your event (optional)</small>
+                        </div>
+                    </div>
+
+                    <!-- Event Status -->
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label>
+                                <i class="fas fa-eye"></i>
+                                Event Status *
+                            </label>
+                            <div class="radio-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="event-status" value="public" checked>
+                                    <span>Public</span>
+                                    <small>Anyone can view and register</small>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="event-status" value="private">
+                                    <span>Private</span>
+                                    <small>Only invited users can access</small>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Form Actions -->
+                    <div class="form-actions">
+                        <a href="events.html" class="btn btn-outline">Cancel</a>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-check"></i> Create Event
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>EventHub</span>
+                </div>
+                <p class="footer-tagline">Making event management simple, efficient, and accessible for everyone</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="dashboard-admin.html">Dashboard</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <ul class="footer-links">
+                    <li><i class="fas fa-envelope"></i> support@eventhub.com</li>
+                    <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Mumbai, India</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 EventHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Certificates - EventHub</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="page-fade-in">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">
+                <i class="fas fa-calendar-alt"></i>
+                <span>EventHub</span>
+            </div>
+            <div class="sidebar-user">
+                Hello,
+                <strong class="user-name">User</strong>
+            </div>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="dashboard.html">
+                <i class="fas fa-home"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="my-events.html">
+                <i class="fas fa-calendar-check"></i>
+                <span>My Events</span>
+            </a>
+            <a href="upcoming-events.html">
+                <i class="fas fa-clock"></i>
+                <span>Upcoming Events</span>
+            </a>
+            <a href="browse-events.html">
+                <i class="fas fa-search"></i>
+                <span>Browse Events</span>
+            </a>
+            <a href="certificates.html" class="active">
+                <i class="fas fa-award"></i>
+                <span>Certificates</span>
+            </a>
+            <a href="#" class="logout" onclick="handleLogout()">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Sidebar Backdrop (Mobile) -->
+    <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+    <!-- Sidebar Toggle Button (Mobile) -->
+    <button class="sidebar-toggle" id="sidebar-toggle">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Back Button -->
+        <button class="back-button" onclick="window.history.back()">
+            <i class="fas fa-arrow-left"></i> Back
+        </button>
+
+        <!-- Page Header -->
+        <div class="page-header-dashboard">
+            <h1>My Certificates</h1>
+            <p>View and download your event completion certificates</p>
+        </div>
+
+        <!-- Certificates Grid -->
+        <div class="certificates-grid" id="certificates-container">
+            <!-- Certificates will be loaded here by JavaScript -->
+        </div>
+    </main>
+
+    <!-- Certificate Modal -->
+    <div class="certificate-modal" id="certificate-modal">
+        <div class="certificate-modal-content">
+            <span class="certificate-close" onclick="closeCertificateModal()">&times;</span>
+            <div class="certificate-view" id="certificate-view">
+                <!-- Certificate content will be inserted here -->
+            </div>
+            <button class="btn btn-primary" onclick="window.print()">
+                <i class="fas fa-print"></i> Print Certificate
+            </button>
+        </div>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="../js/auth.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/certificates.js"></script>
+    <script>
+        // Check authentication
+        checkAuth();
+        
+        // Display user name
+        displayUserName();
+        
+        // Load certificates
+        loadCertificates();
+    </script>
+</body>
+</html>
