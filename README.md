@@ -230,8 +230,8 @@ EventHub/
 
 ### Step 1: Clone the Repository
 ```bash
-git clone https://github.com/AshaaKumbhar/EventHub.git
-cd EventHub
+git clone https://github.com/ashakumbhar08/event-management.git
+cd event-management
 ```
 
 ### Step 2: Install Backend Dependencies
@@ -609,8 +609,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 👨‍💻 Author
 
 **Asha Kumbhar**
-- GitHub: [@AshaaKumbhar](https://github.com/AshaaKumbhar)
-- Project: [EventHub Repository](https://github.com/AshaaKumbhar/EventHub)
+- GitHub: [@ashakumbhar08](https://github.com/ashakumbhar08)
+- Project: [Event Management System](https://github.com/ashakumbhar08/event-management)
 
 ---
 
@@ -640,7 +640,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - No email verification during signup
 - Limited search functionality
 
-Report issues at: [GitHub Issues](https://github.com/AshaaKumbhar/EventHub/issues)
+Report issues at: [GitHub Issues](https://github.com/ashakumbhar08/event-management/issues)
 
 ---
 
