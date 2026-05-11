@@ -1,198 +1,205 @@
+<div align="center">
+
 # 🎯 EventHub - Event Management System
 
-[![Node.js](https://img.shields.io/badge/Node.js-v22.x-green.svg)](https://nodejs.org/)
-[![Express.js](https://img.shields.io/badge/Express.js-v4.x-blue.svg)](https://expressjs.com/)
-[![MongoDB](https://img.shields.io/badge/MongoDB-v8.x-brightgreen.svg)](https://www.mongodb.com/)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+### *A modern full-stack platform for seamless event discovery, registration, and management*
 
-A full-stack event management platform with role-based access control, enabling users to discover and register for events while administrators manage event creation, tracking, and analytics.
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
+[![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
 
----
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
+[![GitHub Stars](https://img.shields.io/github/stars/ashakumbhar08/event-management?style=for-the-badge)](https://github.com/ashakumbhar08/event-management/stargazers)
+[![GitHub Repo Size](https://img.shields.io/github/repo-size/ashakumbhar08/event-management?style=for-the-badge)](https://github.com/ashakumbhar08/event-management)
 
-## 📋 Table of Contents
+[View Demo](#-screenshots) • [Report Bug](https://github.com/ashakumbhar08/event-management/issues) • [Request Feature](https://github.com/ashakumbhar08/event-management/issues)
 
-- [Overview](#-overview)
-- [Features](#-features)
-- [Tech Stack](#-tech-stack)
-- [Project Structure](#-project-structure)
-- [Installation](#-installation)
-- [Configuration](#-configuration)
-- [Usage](#-usage)
-- [API Documentation](#-api-documentation)
-- [Database Schema](#-database-schema)
-- [Authentication Flow](#-authentication-flow)
-- [Screenshots](#-screenshots)
-- [Future Enhancements](#-future-enhancements)
-- [Contributing](#-contributing)
-- [License](#-license)
-- [Author](#-author)
+</div>
 
 ---
 
-## 🎯 Overview
+## 📸 Preview
 
-EventHub is a comprehensive event management system built as a full-stack web application. It provides a centralized platform for event discovery, registration, and management with separate interfaces for users and administrators.
+<div align="center">
 
-### Problem Statement
+### Main Dashboard
+![Main Dashboard](./screenshots/dashboard-preview.png)
+*User dashboard with personalized statistics and upcoming events*
+
+### Admin Panel
+![Admin Dashboard](./screenshots/admin-preview.png)
+*Comprehensive admin dashboard with real-time analytics*
+
+### Events Gallery
+![Events Page](./screenshots/events-preview.png)
+*Browse and discover events with advanced filtering*
+
+</div>
+
+---
+
+## 📖 About The Project
+
+**EventHub** is a comprehensive event management system that bridges the gap between event organizers and participants. Built with modern web technologies, it provides a centralized platform for event discovery, registration, and management with role-based access control.
+
+### 🎯 Problem Statement
 Traditional event management involves manual processes, scattered information, and lack of centralized platforms. EventHub solves this by providing a unified digital solution for both event organizers and participants.
 
-### Key Highlights
-- 🔐 Secure authentication with bcrypt password hashing
-- 👥 Role-based access control (User & Admin)
-- 📊 Real-time analytics dashboard
-- 🎫 Digital certificate issuance
-- 📱 Fully responsive design
-- 🗄️ MongoDB database integration
-- 🔄 RESTful API architecture
+### ✨ Why EventHub?
+- 🔐 **Secure Authentication** - bcrypt password hashing with session management
+- 👥 **Role-Based Access** - Separate interfaces for users and administrators
+- 📊 **Real-Time Analytics** - Interactive charts and statistics dashboard
+- 🎫 **Digital Certificates** - Automated certificate issuance and verification
+- 📱 **Responsive Design** - Seamless experience across all devices
+- 🚀 **RESTful API** - Clean, documented API architecture
 
 ---
 
-## ✨ Features
+## 🌟 Key Features
 
-### User Features
-- **Account Management**
-  - Sign up with email and password
-  - Secure login with Remember Me functionality
-  - Session-based authentication (24-hour expiry)
+<table>
+<tr>
+<td width="50%">
 
-- **Event Discovery**
-  - Browse all available events
-  - Filter by category (Tech, Cultural, Sports, Workshop, Other)
-  - View detailed event information
+### 👤 User Features
+- ✅ **Account Management**
+  - Secure signup and login
+  - Remember Me functionality
+  - Session-based authentication
+  
+- 🔍 **Event Discovery**
+  - Browse all events
+  - Filter by category
+  - Detailed event information
   - Search functionality
 
-- **Event Registration**
-  - One-click event registration
+- 📝 **Event Registration**
+  - One-click registration
   - View registered events
   - Track upcoming events
-  - Prevent duplicate registrations
+  - Duplicate prevention
 
-- **Certificates**
+- 🎓 **Certificates**
   - View earned certificates
   - Download/print certificates
   - Certificate verification
 
-- **Dashboard**
-  - Personalized welcome message
-  - Statistics overview (registered events, upcoming events, certificates)
-  - Quick access to upcoming events
+</td>
+<td width="50%">
 
-### Admin Features
-- **Admin Authentication**
+### 👨‍💼 Admin Features
+- 🔑 **Admin Authentication**
   - Secure admin login
-  - Demo credentials: `admin@eventhub.com` / `admin123`
-  - Separate admin session management
+  - Separate session management
+  - Demo account available
 
-- **Event Management**
-  - Create new events with detailed information
+- 📅 **Event Management**
+  - Create new events
   - Edit existing events
-  - Delete events with confirmation
-  - Update event status (Upcoming, Active, Completed)
+  - Delete events
+  - Update event status
 
-- **Analytics Dashboard**
-  - Total events and registrations count
-  - Events by category (Pie chart)
-  - Events by status (Doughnut chart)
+- 📊 **Analytics Dashboard**
+  - Total events & registrations
+  - Category distribution (Pie chart)
+  - Status breakdown (Doughnut chart)
   - Monthly trends (Bar chart)
-  - Real-time data visualization with Chart.js
 
-- **User Management**
-  - View all registered users
-  - Track event registrations
-  - Search and filter functionality
+- 👥 **User Management**
+  - View all users
+  - Track registrations
+  - Search & filter
 
-- **Certificate Management**
-  - Issue certificates to participants
-  - Bulk certificate issuance for completed events
-  - Track issued certificates
+- 🎫 **Certificate Management**
+  - Issue certificates
+  - Bulk issuance
+  - Track certificates
+
+</td>
+</tr>
+</table>
 
 ---
 
 ## 🛠️ Tech Stack
 
+<div align="center">
+
 ### Frontend
-| Technology | Purpose |
-|------------|---------|
-| HTML5 | Structure and semantic markup |
-| CSS3 | Styling, animations, responsive design |
-| JavaScript (ES6+) | Client-side logic and API integration |
-| Font Awesome | Icons |
-| Google Fonts | Typography (Poppins) |
-| Chart.js | Data visualization |
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Chart.js](https://img.shields.io/badge/Chart.js-FF6384?style=for-the-badge&logo=chartdotjs&logoColor=white)
 
 ### Backend
-| Technology | Purpose |
-|------------|---------|
-| Node.js | JavaScript runtime environment |
-| Express.js | Web application framework |
-| Mongoose | MongoDB object modeling (ODM) |
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
+![Mongoose](https://img.shields.io/badge/Mongoose-880000?style=for-the-badge&logo=mongoose&logoColor=white)
 
 ### Database
-| Technology | Purpose |
-|------------|---------|
-| MongoDB | NoSQL database for data storage |
-| MongoDB Compass | Database GUI for development |
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
 
-### Security & Authentication
-| Technology | Purpose |
-|------------|---------|
-| bcryptjs | Password hashing (10 salt rounds) |
-| express-session | Session management |
-| CORS | Cross-origin resource sharing |
+### Authentication & Security
+![bcrypt](https://img.shields.io/badge/bcrypt-338?style=for-the-badge&logo=letsencrypt&logoColor=white)
+![Sessions](https://img.shields.io/badge/express--session-000000?style=for-the-badge&logo=express&logoColor=white)
 
-### Development Tools
-| Tool | Purpose |
-|------|---------|
-| nodemon | Auto-restart during development |
-| dotenv | Environment variable management |
-| Git | Version control |
+### Tools
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![Nodemon](https://img.shields.io/badge/Nodemon-76D04B?style=for-the-badge&logo=nodemon&logoColor=white)
+![dotenv](https://img.shields.io/badge/.env-ECD53F?style=for-the-badge&logo=dotenv&logoColor=black)
+
+</div>
 
 ---
 
 ## 📁 Project Structure
 
 ```
-EventHub/
+event-management/
 │
-├── backend/                          # Backend server and API
-│   ├── server.js                    # Main entry point
-│   ├── package.json                 # Backend dependencies
-│   ├── .env                         # Environment variables
+├── 📂 backend/                    # Backend server and API
+│   ├── server.js                 # Express server entry point
+│   ├── package.json              # Backend dependencies
+│   ├── .env                      # Environment variables (ignored)
+│   ├── .env.example              # Environment template
 │   │
-│   ├── config/
-│   │   └── db.js                    # MongoDB connection
+│   ├── 📂 config/
+│   │   └── db.js                 # MongoDB connection
 │   │
-│   ├── models/                      # Mongoose schemas
-│   │   ├── User.js                  # User model
-│   │   ├── Admin.js                 # Admin model
-│   │   ├── Event.js                 # Event model
-│   │   ├── Registration.js          # Registration model
-│   │   └── Certificate.js           # Certificate model
+│   ├── 📂 models/                # Mongoose schemas
+│   │   ├── User.js
+│   │   ├── Admin.js
+│   │   ├── Event.js
+│   │   ├── Registration.js
+│   │   └── Certificate.js
 │   │
-│   ├── routes/                      # API endpoints
+│   ├── 📂 routes/                # API endpoints
 │   │   ├── userRoutes.js
 │   │   ├── adminRoutes.js
 │   │   ├── eventRoutes.js
 │   │   ├── registrationRoutes.js
 │   │   └── certificateRoutes.js
 │   │
-│   ├── controllers/                 # Business logic
+│   ├── 📂 controllers/           # Business logic
 │   │   ├── userController.js
 │   │   ├── adminController.js
 │   │   ├── eventController.js
 │   │   ├── registrationController.js
 │   │   └── certificateController.js
 │   │
-│   └── middleware/
-│       └── authMiddleware.js        # Authentication guards
+│   └── 📂 middleware/
+│       └── authMiddleware.js     # Authentication guards
 │
-├── frontend/                         # Frontend HTML, CSS, JS
-│   ├── index.html                   # Landing page
-│   ├── signup.html                  # User/Admin signup
-│   ├── login.html                   # User login
-│   ├── admin-login.html             # Admin login
+├── 📂 frontend/                   # Frontend application
+│   ├── index.html                # Landing page
+│   ├── signup.html               # User/Admin signup
+│   ├── login.html                # User login
+│   ├── admin-login.html          # Admin login
 │   │
-│   ├── user/                        # User pages
+│   ├── 📂 user/                  # User dashboard pages
 │   │   ├── dashboard.html
 │   │   ├── browse-events.html
 │   │   ├── event-detail.html
@@ -200,67 +207,72 @@ EventHub/
 │   │   ├── upcoming-events.html
 │   │   └── certificates.html
 │   │
-│   ├── css/                         # Stylesheets
+│   ├── 📂 css/                   # Stylesheets
 │   │   ├── style.css
 │   │   ├── admin-style.css
 │   │   ├── admin-sidebar.css
 │   │   └── admin-charts.css
 │   │
-│   └── js/                          # JavaScript files
-│       ├── config.js                # API configuration
-│       ├── utils.js                 # Utility functions
-│       ├── signup.js
-│       ├── login-auth.js
-│       ├── user-dashboard.js
-│       ├── admin-auth.js
-│       └── [other JS files]
+│   └── 📂 js/                    # JavaScript modules
+│       ├── config.js             # API configuration
+│       ├── utils.js              # Utility functions
+│       ├── auth.js               # Authentication logic
+│       ├── events.js             # Event management
+│       └── [15+ JS files]
 │
-├── .gitignore                       # Git ignore rules
-└── README.md                        # Project documentation
+├── 📂 screenshots/                # Project screenshots
+├── .gitignore                    # Git ignore rules
+├── LICENSE                       # MIT License
+├── CONTRIBUTING.md               # Contribution guidelines
+└── README.md                     # Project documentation
 ```
 
 ---
 
-## 🚀 Installation
+## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js (v14 or higher)
-- MongoDB (v4 or higher)
-- npm or yarn
+- **Node.js** (v14 or higher)
+- **MongoDB** (v4 or higher)
+- **npm** or **yarn**
 
-### Step 1: Clone the Repository
+### Installation
+
+1️⃣ **Clone the repository**
 ```bash
 git clone https://github.com/ashakumbhar08/event-management.git
 cd event-management
 ```
 
-### Step 2: Install Backend Dependencies
+2️⃣ **Install dependencies**
 ```bash
 cd backend
 npm install
 ```
 
-### Step 3: Start MongoDB
+3️⃣ **Configure environment**
 ```bash
-# macOS (using Homebrew)
-brew services start mongodb-community
+# Create .env file in backend directory
+cp .env.example .env
 
-# Windows
-# Start MongoDB service from Services
-
-# Linux
-sudo systemctl start mongod
-```
-
-### Step 4: Configure Environment Variables
-Create a `.env` file in the `backend` directory:
-```env
+# Edit .env with your configuration
 PORT=5001
 MONGO_URI=mongodb://localhost:27017/eventhub
 SESSION_SECRET=your_secret_key_here
 ```
 
-### Step 5: Start the Backend Server
+4️⃣ **Start MongoDB**
+```bash
+# macOS
+brew services start mongodb-community
+
+# Linux
+sudo systemctl start mongod
+
+# Windows - Start MongoDB service from Services
+```
+
+5️⃣ **Run the application**
 ```bash
 # Development mode (with auto-restart)
 npm run dev
@@ -269,79 +281,21 @@ npm run dev
 npm start
 ```
 
-### Step 6: Access the Application
-Open your browser and navigate to:
+6️⃣ **Open in browser**
 ```
 http://localhost:5001
 ```
 
----
+### 🎭 Demo Credentials
 
-## ⚙️ Configuration
-
-### Environment Variables
-
-| Variable | Description | Default |
-|----------|-------------|---------|
-| `PORT` | Server port number | 5001 |
-| `MONGO_URI` | MongoDB connection string | mongodb://localhost:27017/eventhub |
-| `SESSION_SECRET` | Secret key for session encryption | (required) |
-
-### MongoDB Setup
-
-#### Local Development
-```bash
-# Start MongoDB
-mongod
-
-# Connect to MongoDB shell
-mongosh
-
-# Use eventhub database
-use eventhub
-
-# View collections
-show collections
-```
-
-#### Production (MongoDB Atlas)
-1. Create a MongoDB Atlas account
-2. Create a new cluster
-3. Get connection string
-4. Update `MONGO_URI` in `.env`
-
----
-
-## 💻 Usage
-
-### Demo Credentials
-
-#### Admin Access
+**Admin Access:**
 ```
 Email: admin@eventhub.com
 Password: admin123
 ```
 
-#### User Access
-Create a new account via the signup page or use any account you create.
-
-### User Workflow
-1. Visit the landing page
-2. Sign up for a new account
-3. Log in with credentials
-4. Browse available events
-5. Register for events
-6. View registered events in "My Events"
-7. Check certificates in "Certificates" page
-
-### Admin Workflow
-1. Log in with admin credentials
-2. View dashboard statistics
-3. Create new events
-4. Manage existing events (edit/delete)
-5. View user registrations
-6. Issue certificates
-7. Analyze data in analytics dashboard
+**User Access:**
+Create a new account via the signup page
 
 ---
 
@@ -352,25 +306,33 @@ Create a new account via the signup page or use any account you create.
 http://localhost:5001/api
 ```
 
-### Authentication Endpoints
+### Endpoints Overview
 
-#### User Authentication
+<details>
+<summary><b>👤 User Authentication</b></summary>
+
 ```http
 POST   /api/users/signup      # Create new user account
 POST   /api/users/login       # Authenticate user
 POST   /api/users/logout      # End user session
 GET    /api/users/me          # Get current user info (protected)
 ```
+</details>
 
-#### Admin Authentication
+<details>
+<summary><b>👨‍💼 Admin Authentication</b></summary>
+
 ```http
 POST   /api/admins/signup     # Create admin account
 POST   /api/admins/login      # Authenticate admin
 POST   /api/admins/logout     # End admin session
 GET    /api/admins/me         # Get current admin info (protected)
 ```
+</details>
 
-### Event Endpoints
+<details>
+<summary><b>📅 Event Management</b></summary>
+
 ```http
 GET    /api/events            # Get all events (public)
 GET    /api/events/:id        # Get single event (public)
@@ -379,8 +341,11 @@ PUT    /api/events/:id        # Update event (admin only)
 DELETE /api/events/:id        # Delete event (admin only)
 GET    /api/events/stats      # Get event statistics (admin only)
 ```
+</details>
 
-### Registration Endpoints
+<details>
+<summary><b>📝 Registration Management</b></summary>
+
 ```http
 POST   /api/registrations                    # Register for event (user only)
 GET    /api/registrations/my                 # Get user's registrations (user only)
@@ -388,8 +353,11 @@ DELETE /api/registrations/:eventId           # Cancel registration (user only)
 GET    /api/registrations/event/:eventId     # Get event registrations (admin only)
 GET    /api/registrations/stats              # Get registration statistics (admin only)
 ```
+</details>
 
-### Certificate Endpoints
+<details>
+<summary><b>🎓 Certificate Management</b></summary>
+
 ```http
 GET    /api/certificates/my                  # Get user's certificates (user only)
 POST   /api/certificates                     # Issue certificate (admin only)
@@ -397,24 +365,9 @@ POST   /api/certificates/event/:eventId      # Issue certificates for event (adm
 GET    /api/certificates                     # Get all certificates (admin only)
 DELETE /api/certificates/:id                 # Delete certificate (admin only)
 ```
+</details>
 
-### Example API Request
-```javascript
-// User Login
-fetch('http://localhost:5001/api/users/login', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify({
-    email: 'user@example.com',
-    password: 'password123'
-  }),
-  credentials: 'include'  // Important: sends session cookie
-})
-.then(res => res.json())
-.then(data => console.log(data));
-```
+**Total API Endpoints:** 24
 
 ---
 
@@ -422,30 +375,35 @@ fetch('http://localhost:5001/api/users/login', {
 
 ### Collections
 
-#### users
+**users** • **admins** • **events** • **registrations** • **certificates**
+
+<details>
+<summary><b>View Schema Details</b></summary>
+
+#### 👤 users
 ```javascript
 {
   _id: ObjectId,
   name: String (required),
   email: String (required, unique, lowercase),
-  password: String (required, hashed),
+  password: String (required, hashed with bcrypt),
   createdAt: Date (default: now)
 }
 ```
 
-#### admins
+#### 👨‍💼 admins
 ```javascript
 {
   _id: ObjectId,
   name: String (required),
   email: String (required, unique, lowercase),
-  password: String (required, hashed),
+  password: String (required, hashed with bcrypt),
   isDemo: Boolean (default: false),
   createdAt: Date (default: now)
 }
 ```
 
-#### events
+#### 📅 events
 ```javascript
 {
   _id: ObjectId,
@@ -462,7 +420,7 @@ fetch('http://localhost:5001/api/users/login', {
 }
 ```
 
-#### registrations
+#### 📝 registrations
 ```javascript
 {
   _id: ObjectId,
@@ -471,12 +429,12 @@ fetch('http://localhost:5001/api/users/login', {
   userName: String (required),
   userEmail: String (required),
   eventTitle: String (required),
-  registeredAt: Date (default: now),
-  // Unique index: userId + eventId
+  registeredAt: Date (default: now)
+  // Unique compound index: userId + eventId
 }
 ```
 
-#### certificates
+#### 🎓 certificates
 ```javascript
 {
   _id: ObjectId,
@@ -485,175 +443,149 @@ fetch('http://localhost:5001/api/users/login', {
   userName: String (required),
   eventTitle: String (required),
   completedDate: Date (required),
-  issuedAt: Date (default: now),
-  // Unique index: userId + eventId
+  issuedAt: Date (default: now)
+  // Unique compound index: userId + eventId
 }
 ```
+
+</details>
 
 ---
 
 ## 🔐 Authentication Flow
 
-### User Registration
-1. User submits signup form
-2. Frontend validates input
-3. Backend checks if email exists
-4. Password hashed with bcrypt (10 rounds)
-5. User saved to MongoDB
-6. Success response sent to frontend
+```mermaid
+graph LR
+    A[User/Admin] -->|Submit Credentials| B[Backend API]
+    B -->|Validate| C{Credentials Valid?}
+    C -->|Yes| D[Hash Password Check]
+    D -->|Match| E[Create Session]
+    E -->|Set Cookie| F[Redirect to Dashboard]
+    C -->|No| G[Return Error]
+    D -->|No Match| G
+```
 
-### User Login
-1. User submits login credentials
-2. Backend finds user by email
-3. Password compared with stored hash
-4. Session created and stored
-5. Session cookie sent to browser
-6. User redirected to dashboard
-
-### Session Management
-- Sessions stored in memory (express-session)
-- Session cookie sent with every request
-- 24-hour session expiry
-- HttpOnly cookie flag for security
-
-### Protected Routes
-- Middleware checks session before allowing access
-- Unauthorized requests return 401 status
-- Frontend redirects to login if unauthorized
+**Security Features:**
+- 🔒 bcrypt password hashing (10 salt rounds)
+- 🍪 HTTP-only session cookies
+- ⏱️ 24-hour session expiry
+- 🛡️ CORS protection
+- 🚫 Duplicate registration prevention
 
 ---
 
 ## 📸 Screenshots
 
-### Landing Page
-![Landing Page](screenshots/landing-page.png)
-*Modern landing page with hero section and features*
+<div align="center">
 
-### User Dashboard
-![User Dashboard](screenshots/user-dashboard.png)
-*Personalized dashboard with statistics and upcoming events*
+### 🏠 Landing Page
+![Landing Page](./screenshots/landing-page.png)
 
-### Event Browsing
-![Browse Events](screenshots/browse-events.png)
-*Browse and filter available events*
+### 👤 User Dashboard
+![User Dashboard](./screenshots/user-dashboard.png)
 
-### Admin Dashboard
-![Admin Dashboard](screenshots/admin-dashboard.png)
-*Admin dashboard with analytics and statistics*
+### 📅 Browse Events
+![Browse Events](./screenshots/browse-events.png)
 
-### Event Management
-![Manage Events](screenshots/manage-events.png)
-*Create, edit, and delete events*
+### 👨‍💼 Admin Dashboard
+![Admin Dashboard](./screenshots/admin-dashboard.png)
 
-### Analytics
-![Analytics](screenshots/analytics.png)
-*Real-time analytics with Chart.js*
+### 📊 Analytics
+![Analytics](./screenshots/analytics.png)
 
-> **Note**: Add actual screenshots to the `screenshots/` directory
+### ⚙️ Event Management
+![Manage Events](./screenshots/manage-events.png)
+
+> **Note:** Add actual screenshots to the `screenshots/` directory
+
+</div>
 
 ---
 
 ## 🚀 Future Enhancements
 
-### Short-term
-- [ ] Email notifications for event registration
-- [ ] Forgot password functionality
-- [ ] User profile editing
-- [ ] Event image upload
-- [ ] QR code for event check-in
-- [ ] Export certificates as PDF
-
-### Medium-term
-- [ ] Payment gateway integration
-- [ ] Event calendar view
-- [ ] Social media sharing
-- [ ] Event reviews and ratings
-- [ ] Advanced search filters
-- [ ] Push notifications
-
-### Long-term
-- [ ] Mobile application (React Native)
-- [ ] Real-time chat support
-- [ ] AI-based event recommendations
-- [ ] Google Calendar integration
-- [ ] Multi-language support
-- [ ] Video conferencing for virtual events
-- [ ] Blockchain-based certificate verification
+- [ ] 📧 Email notifications for registrations
+- [ ] 🔑 Forgot password functionality
+- [ ] 👤 User profile editing
+- [ ] 🖼️ Event image upload
+- [ ] 📱 QR code for event check-in
+- [ ] 📄 Export certificates as PDF
+- [ ] 💳 Payment gateway integration
+- [ ] 📅 Event calendar view
+- [ ] 🌐 Social media sharing
+- [ ] ⭐ Event reviews and ratings
+- [ ] 🔍 Advanced search filters
+- [ ] 🔔 Push notifications
+- [ ] 📱 Mobile application
+- [ ] 💬 Real-time chat support
+- [ ] 🤖 AI-based event recommendations
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please follow these steps:
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-1. Fork the repository
-2. Create a new branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-### Coding Standards
-- Use meaningful variable names
-- Add comments for complex logic
-- Follow existing code structure
-- Test before submitting PR
+See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 
 ---
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
 
 ---
 
-## 👨‍💻 Author
+## 📊 Project Stats
 
-**Asha Kumbhar**
-- GitHub: [@ashakumbhar08](https://github.com/ashakumbhar08)
-- Project: [Event Management System](https://github.com/ashakumbhar08/event-management)
+<div align="center">
 
----
+| Metric | Value |
+|--------|-------|
+| **Total Files** | 70+ |
+| **Lines of Code** | 5,000+ |
+| **API Endpoints** | 24 |
+| **Database Collections** | 5 |
+| **Frontend Pages** | 18 |
+| **JavaScript Modules** | 15+ |
 
-## 🙏 Acknowledgments
-
-- Font Awesome for icons
-- Google Fonts for typography
-- Chart.js for data visualization
-- MongoDB for database
-- Express.js community
-
----
-
-## 📊 Project Statistics
-
-- **Total Files**: 70+
-- **Lines of Code**: 5,000+
-- **API Endpoints**: 24
-- **Database Collections**: 5
-- **Development Time**: 10-11 hours
+</div>
 
 ---
 
-## 🐛 Known Issues
+## 🐛 Issues & Support
 
-- Session expires after 24 hours (requires re-login)
-- No email verification during signup
-- Limited search functionality
+Found a bug or have a feature request? Please open an issue:
 
-Report issues at: [GitHub Issues](https://github.com/ashakumbhar08/event-management/issues)
-
----
-
-## 📞 Support
-
-For support, open an issue on GitHub.
+[![GitHub Issues](https://img.shields.io/github/issues/ashakumbhar08/event-management?style=for-the-badge)](https://github.com/ashakumbhar08/event-management/issues)
 
 ---
 
 <div align="center">
 
-**⭐ Star this repository if you found it helpful!**
+## 👨‍💻 Developed By
 
-Made with ❤️ for learning and education
+**Asha Kumbhar**
+
+[![GitHub](https://img.shields.io/badge/GitHub-ashakumbhar08-181717?style=for-the-badge&logo=github)](https://github.com/ashakumbhar08)
+[![Project](https://img.shields.io/badge/Project-Event_Management-4F46E5?style=for-the-badge)](https://github.com/ashakumbhar08/event-management)
+
+---
+
+### ⭐ Star this repository if you found it helpful!
+
+### 🔗 [View Live Demo](#) • [Report Bug](https://github.com/ashakumbhar08/event-management/issues) • [Request Feature](https://github.com/ashakumbhar08/event-management/issues)
+
+---
+
+**Made with ❤️ for learning and education**
+
+*EventHub © 2024 - All Rights Reserved*
 
 </div>
